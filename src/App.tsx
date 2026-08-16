@@ -1,11 +1,13 @@
 import { useCallback } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import NewsTicker from '@/components/NewsTicker';
 import Situations from '@/components/Situations';
 import QuickTips from '@/components/QuickTips';
 import EmergencyContacts from '@/components/EmergencyContacts';
 import Footer from '@/components/Footer';
 import Chatbot from '@/components/Chatbot';
+import ScrollProgress from '@/components/ScrollProgress';
 
 export default function App() {
   const scrollTo = useCallback((id: string) => {
@@ -19,8 +21,10 @@ export default function App() {
 
   return (
     <div id="top" className="min-h-screen bg-white">
+      <ScrollProgress />
       <Navbar onNavigate={scrollTo} />
       <Hero onExplore={() => scrollTo('situations')} />
+      <NewsTicker />
       <Situations />
       <div id="tips">
         <QuickTips />
