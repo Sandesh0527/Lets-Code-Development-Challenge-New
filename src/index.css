@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --saffron: #ff9933;
+    --india-green: #138808;
+    --navy: #000080;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .tricolor-bar {
+    background: linear-gradient(
+      to right,
+      #ff9933 0%, #ff9933 33.33%,
+      #ffffff 33.33%, #ffffff 66.66%,
+      #138808 66.66%, #138808 100%
+    );
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 9999px;
+  }
+}
